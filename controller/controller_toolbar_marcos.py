@@ -143,19 +143,19 @@ class MarcosController(MarcosToolBar):
                 print("Server disconnected")
             else:
                 try:
-                    subprocess.run([hw.bash_path, "--", "./communicateRP.sh", hw.rp_ip_address, "killall marcos_server"])
-                    time.sleep(1.5)
-                    subprocess.run([hw.bash_path, "--", "./communicateRP.sh", hw.rp_ip_address, "~/marcos_server"])
-                    time.sleep(1.5)
-                    self.action_server.setStatusTip('Kill marcos server')
-                    self.action_server.setToolTip('Kill marcos server')
+                    # subprocess.run([hw.bash_path, "--", "./communicateRP.sh", hw.rp_ip_address, "killall marcos_server"])
+                    # time.sleep(1.5)
+                    # subprocess.run([hw.bash_path, "--", "./communicateRP.sh", hw.rp_ip_address, "~/marcos_server"])
+                    # time.sleep(1.5)
+                    # self.action_server.setStatusTip('Kill marcos server')
+                    # self.action_server.setToolTip('Kill marcos server')
 
-                    expt = ex.Experiment(init_gpa=False)
-                    expt.add_flodict({
-                        'grad_vx': (np.array([100]), np.array([0])),
-                    })
-                    expt.run()
-                    expt.__del__()
+                    # expt = ex.Experiment(init_gpa=False)
+                    # expt.add_flodict({
+                    #     'grad_vx': (np.array([100]), np.array([0])),
+                    # })
+                    # expt.run()
+                    # expt.__del__()
                     print("READY: Server connected!")
 
                 except Exception as e:
