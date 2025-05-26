@@ -84,7 +84,7 @@ class MarcosController(MarcosToolBar):
         for i in range(101, 132):  # Scan IP range 192.168.1.101 to 192.168.1.132
             ip = subnet + str(i)
             try:
-                if platform.system() == 'Linux':
+                if platform.system() == 'Linux' or platform.system() == 'Darwin':
                     result = subprocess.run(['ping', '-c', '1', ip], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                                    timeout=timeout)
                 elif platform.system() == 'Windows':
